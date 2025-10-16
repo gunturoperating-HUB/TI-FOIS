@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operating Department</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('BBG.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      text-align: center;
+    }
+
+    .heading1 {
+font-family: 'Playfair Display', serif;
+      font-size: 55px;
+      font-weight: bold;
+      text-shadow: 3px 3px 5px white;
+      color: #002366;
+      margin: 10px 0 0px 0;
+
+
+     
+    }
+
+    .heading2 {
+
+
+     font-family: 'Bookman Old Style', serif;
+      font-size: 65px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #FFD700;
+      -webkit-text-stroke: 2px black;
+      text-shadow: 5px 5px 5px blue;
+
+
+      
+    }
+
+    .heading3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-shadow: 3px 3px 5px yellow;
+      color: GREEN;
+    }
+
+    .logo {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .passport-container {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      text-align: center;
+    }
+
+    .passport {
+      width: 150px;
+      height: 170px;
+      border: 2px solid black;
+      object-fit: cover;
+    }
+
+    .caption {
+ font-family: 'Cinzel Decorative', serif;
+
+      font-size: 18px;
+      font-weight: bold;
+      color: #002366;
+      margin-top: 8px;
+
+
+    }
+
+    /* Button container */
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:50px;
+      justify-items: center;
+      margin: 40px auto;
+      max-width: 75%;
+    }
+
+    button {
+  width: 240px;
+  height: 65px;
+  font-size: 18px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 14px;
+  color: WHITE;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.35s ease;
+  background-size: 200% auto;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+}
+
+
+    button:hover {
+      transform: scale(1.07);
+      background-position: right center;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                  0 0 40px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Gradient + neon glow themes */
+    .btn1 { background-image: linear-gradient(to right, #89f7fe, #66a6ff); }
+    .btn2 { background-image: linear-gradient(to right, #f6d365, #fda085); }
+    .btn3 { background-image: linear-gradient(to right, #a1c4fd, #c2e9fb); }
+    .btn4 { background-image: linear-gradient(to right, #fbc2eb, #a6c1ee); }
+    .btn5 { background-image: linear-gradient(to right, #fddb92, #d1fdff); }
+    .btn6 { background-image: linear-gradient(to right, #84fab0, #8fd3f4); }
+
+    .btn1:hover { box-shadow: 0 0 20px #66a6ff, 0 0 40px #89f7fe; }
+    .btn2:hover { box-shadow: 0 0 20px #f6d365, 0 0 40px #fda085; }
+    .btn3:hover { box-shadow: 0 0 20px #a1c4fd, 0 0 40px #c2e9fb; }
+    .btn4:hover { box-shadow: 0 0 20px #fbc2eb, 0 0 40px #a6c1ee; }
+    .btn5:hover { box-shadow: 0 0 20px #fddb92, 0 0 40px #d1fdff; }
+    .btn6:hover { box-shadow: 0 0 20px #84fab0, 0 0 40px #8fd3f4; }
+
+
+    .A { background: linear-gradient(135deg, #1565c0, #1e88e5); }
+    .B { background: linear-gradient(135deg, #00897b, #26a69a); }
+    .C { background: linear-gradient(135deg, #6a1b9a, #8e24aa); }
+    .D { background: linear-gradient(135deg, #ef6c00, #f57c00); }
+    .E { background: linear-gradient(135deg, #0097a7, #006064); }
+    .F { background: linear-gradient(135deg, #f9a825, #f57f17); }
+
+
+    /* Sub-buttons */
+    .sub-buttons {
+      display: none;
+      margin-top: 10px;
+      text-align: center;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .sub-buttons button {
+      width: 190px;
+      height: 45px;
+      font-size: 16px;
+grid-template-columns: repeat(4, 1fr);
+      border: none;
+      border-radius: 10px;
+      background-image: linear-gradient(to right, #e0f7fa, #e1f5fe);
+      color: #003366;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .sub-buttons button:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 15px #b3e5fc;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+/* Stylish Scrolling Text */
+.scroll-text {
+  margin-top: 60px;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 25px;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 3px 3px 6px #002366, 0 0 20px #fff;
+  border-top: 2px solid rgba(255,255,255,0.4);
+  border-bottom: 2px solid rgba(255,255,255,0.4);
+  padding: 15px 0;
+  background: rgba(0, 35, 102, 0.2);
+}
+
+.scroll-text span {
+  color: #fff;
+  text-shadow: 2px 2px 4px #000, 0 0 10px #FFD700;
+  font-style: italic;
+}
+
+ .watermark {
+      position: fixed;
+      bottom: 10px;
+      right: 20px;
+      opacity: 0.1;
+      font-size: 80px;
+      font-weight: bold;
+      color: #0d47a1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+
+/* Footer */
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 35, 102, 0.6);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  footer a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+.footer-left {
+      position: fixed;
+      bottom: 40px;
+      left: 15px;
+      font-size: 18px;
+      color: #0066cc;
+      font-weight: bold;
+font-family: 'Playfair Display', serif;
+
+    }
+
+    .footer-left a {
+      text-decoration: none;
+      color: #0066cc;
+    }
+
+    .footer-left a:hover {
+color: #fff;      
+text-decoration: underline;
+    }
+
+
+  </style>
+</head>
+<body>
+  <img src="L2.jpeg" alt="Logo" class="logo">
+
+  <div class="passport-container">
+    <img src="R1.jpeg" alt="Passport Photo" class="passport">
+    <div class="caption">J.SRINATH, IRTS</div>
+    <div class="caption">Sr.DOM/GNT</div>
+  </div>
+
+  <div class="heading1">OPERATING DEPARTMENT</div>
+  <div class="heading2">FRIGHT OPERATIONS</div>
+  <div class="heading3">GUNTUR DIVISION</div>
+
+  
+
+ <!-- Main Button Grid -->
+   <div class="button-container">
+   
+
+     
+<button class="btn1" onclick="window.open('https://docs.google.com/spreadsheets/d/1evokvOjkjn6xXxEpDnBYE8pV5eMDP9OhIvDvblwDZ-0/edit?gid=772668189#gid=772668189')">INTERCHANGE FORECAST</button>
+     <button class="btn1" onclick="window.open('https://docs.google.com/spreadsheets/d/1vmTzfHljsNRFD10EK4mkId5ZTY-BozEuvTYq4-w-_AA/edit?gid=1757705846#gid=1757705846')">ZONAL INTERCHANGE</button>
+     <button class="btn2" onclick="window.open('https://docs.google.com/spreadsheets/d/1BGm512W3VZ5LAyuIWdK5wBpXlWAHDIkfw3vp3a8MPNs/edit?gid=0#gid=0')">DATA SUMMARY</button>
+     <button class="btn3" onclick="window.open('https://docs.google.com/spreadsheets/d/1BGm512W3VZ5LAyuIWdK5wBpXlWAHDIkfw3vp3a8MPNs/edit?gid=228669151#gid=228669151')">LONG HAULS</button>
+	   
+     <button class="btn4" onclick="window.open('https://docs.google.com/spreadsheets/d/1BGm512W3VZ5LAyuIWdK5wBpXlWAHDIkfw3vp3a8MPNs/edit?gid=975322577#gid=975322577')"> CRACK SPL.</button>
+      <button class="btn5" onclick="window.open('https://docs.google.com/spreadsheets/d/1BGm512W3VZ5LAyuIWdK5wBpXlWAHDIkfw3vp3a8MPNs/edit?gid=1335321478#gid=1335321478')">Sr.DOM YTPV POSITION</button>
+     <button class="btn6" onclick="window.open('https://docs.google.com/spreadsheets/d/1BGm512W3VZ5LAyuIWdK5wBpXlWAHDIkfw3vp3a8MPNs/edit?gid=1079231296#gid=1079231296')">WITH OUT GUARD AND B/V</button>
+    <button class="btn1" onclick="window.open('https://docs.google.com/spreadsheets/d/1BGm512W3VZ5LAyuIWdK5wBpXlWAHDIkfw3vp3a8MPNs/edit?gid=661800100#gid=661800100')">NEXT ENGINE B/V</button>
+	   
+     <button class="btn2" onclick="window.open('https://docs.google.com/spreadsheets/d/1BGm512W3VZ5LAyuIWdK5wBpXlWAHDIkfw3vp3a8MPNs/edit?gid=1320058970#gid=1320058970')">DAILY H/O & T/O</button>
+     <button class="btn3" onclick="window.open('https://docs.google.com/spreadsheets/d/1BGm512W3VZ5LAyuIWdK5wBpXlWAHDIkfw3vp3a8MPNs/edit?gid=1106921661#gid=1106921661')">TMR SCALE CHECK</button>
+     <button class="btn4" onclick="window.open('https://docs.google.com/spreadsheets/d/1BGm512W3VZ5LAyuIWdK5wBpXlWAHDIkfw3vp3a8MPNs/edit?gid=531659638#gid=531659638')">STABLE STOCK POSITION</button>
+     <button class="btn5" onclick="window.open('https://docs.google.com/spreadsheets/d/1BGm512W3VZ5LAyuIWdK5wBpXlWAHDIkfw3vp3a8MPNs/edit?gid=352679511#gid=352679511')">DAILY LOADING</button>
+     
+    <button class="btn6" onclick="window.open('https://docs.google.com/spreadsheets/d/1BGm512W3VZ5LAyuIWdK5wBpXlWAHDIkfw3vp3a8MPNs/edit?gid=1856878553#gid=1856878553')">DAILY UNLOADING</button>
+     <button class="btn1" onclick="window.open('https://docs.google.com/spreadsheets/d/1BGm512W3VZ5LAyuIWdK5wBpXlWAHDIkfw3vp3a8MPNs/edit?gid=2044382274#gid=2044382274')">TI FORMATE W/O TMR</button>
+    <button class="btn2" onclick="window.open('https://docs.google.com/spreadsheets/d/19ejKXqrgehsLubCpih0N8jXGc6oTIsxVCXSG9HzwdOM/edit?gid=870647677#gid=870647677')">STN CONTACT NUMBERS</button>     
+    <button class="btn3" onclick="window.open('https://tifoisguntur-cell.github.io/MY-OPERATING-WEBSITE/')">OPERATING DATA</button>
+     
+    <button class="btn4" onclick="window.open('https://docs.google.com/spreadsheets/d/1ofzcUiKHCNY6wvTtRvdENG7gugNuWQw75rCyumk1BOU/edit?gid=0#gid=0')">MONTHLY UPDATE</button>
+     <button class="btn5" onclick="window.open('https://docs.google.com/spreadsheets/d/1nQ3Vzsa8Bj2GaDxVxe6D3-5WI4sWqWYZXq4VbLfwBMg/edit?gid=427307047#gid=427307047')">CHIRU_DATA</button>
+    <button class="btn6" onclick="window.open('https://docs.google.com/spreadsheets/d/1CfYrMfFgj28IuywfBK_nIXO1-ecn4SonHr99RZuW8Es/edit?gid=0#gid=0')">Stations Section wise</button>     
+    <button class="btn1" onclick="window.open('https://docs.google.com/spreadsheets/d/1pF5eaLl5uIOgBhDAxN5iW3IK_KR7XeJ9iWBIxBi5TT0/edit?gid=0#gid=0')">ZONAL LEVEL STATINS INFO.</button>
+  </div>
+<footer>
+  <p>
+    Designed for <strong>FRIGHT OPERATIONS</strong> | Powered by 
+    <a href="file:///C:/Users/HP/Desktop/Gunturoperating/MAIN_SHEET/MAINindex.html">
+      Operating Department, GNT Division
+    </a>
+  </p>
+</footer>
+
+
+
+<!-- Stylish Scrolling Text -->
+<div class="scroll-text">
+  <marquee behavior="scroll" direction="LEFT" scrollamount="12">
+    🌟✨ Welcome to the <span>Operating Department </span> FRIGHT CELL <span> of Guntur Division, South Central Railway</span>  🚂💼
+  </marquee>
+</div>
+
+<!-- Contact link in bottom-left -->
+  <div class="footer-left">
+    <a href="file:///C:/Users/HP/Desktop/Gunturoperating/CONTACT/contact.html">CONTACT-TI</a>
+  </div>
+
+
+<div class="watermark">FOIS-HUB</div>
+ <script>
+    function openFolder(url) {
+      window.open(url, "_blank");
+    }
+ 
+
+
+  // Toggle visibility of sub-buttons (dropdowns)
+  function toggleSubButtons(id) {
+    // Close all other open submenus first
+    document.querySelectorAll('.sub-buttons').forEach(sub => {
+      if (sub.id !== id) sub.style.display = 'none';
+    });
+
+    const el = document.getElementById(id);
+    el.style.display = (el.style.display === "block") ? "none" : "block";
+  }
+
+  // Open link and immediately close submenu
+  function openSub(url, id) {
+    const submenu = document.getElementById(id);
+    if (submenu) submenu.style.display = 'none'; // Hide instantly before opening
+
+    // Open in new tab after a short delay (ensures submenu hides first)
+    setTimeout(() => {
+      window.open(url, '_blank');
+    }, 100);
+  }
+
+  // Hide submenu if user clicks anywhere outside of it
+  document.addEventListener('click', function(event) {
+    const isInsideSubmenu = event.target.closest('.sub-buttons');
+    const isMainButton = event.target.closest('button');
+    if (!isInsideSubmenu && !isMainButton) {
+      document.querySelectorAll('.sub-buttons').forEach(sub => sub.style.display = 'none');
+    }
+  });
+</script>
+
+
+</body>
+</html>

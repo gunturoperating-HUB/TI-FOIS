@@ -1,272 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Planning - Operating Department</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<title>Operating Department</title>
 
 <style>
 body {
+  font-family: Arial, sans-serif;
+  background: url('bbg.jpeg') no-repeat center center fixed;
+  background-size: cover;
   margin: 0;
-  font-family: 'Playfair Display', serif;
-  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-  color: #003366;
   text-align: center;
 }
 
-/* HEADINGS */
+/* ===== HEADINGS ===== */
 .heading1 {
-  font-family: 'Cinzel Decorative', cursive;
-  font-size: 50px;
-  color: darkblue;
-  margin-top: 15px;
+  font-family: 'Playfair Display', serif;
+  font-size: 55px;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px white;
+  color: #002366;
+  margin: 10px 0 0px 0;
 }
+
 .heading2 {
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: 'Bookman Old Style', serif;
   font-size: 65px;
-  color: #006400;
-  margin: 5px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FFD700;
+  -webkit-text-stroke: 2px black;
+  text-shadow: 5px 5px 5px blue;
 }
+
 .heading3 {
   font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  color: #b8860b;
-  margin: 5px 0 20px;
+  font-size: 38px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 5px yellow;
+  color: GREEN;
 }
 
-/* LOGOS */
-.logo, .passport {
-  position: static;
-  width: 120px;
-  height: 120px;
+/* ===== LOGO & PASSPORT ===== */
+.logo {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 15px;
-  margin: 10px;
-}
-.top-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
 }
 
-/* BUTTONS GRID */
+.passport-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  text-align: center;
+}
+
+.passport {
+  width: 150px;
+  height: 170px;
+  border: 2px solid black;
+  object-fit: cover;
+}
+
+.caption {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #002366;
+  margin-top: 8px;
+}
+
+/* ===== BUTTON CONTAINER ===== */
 .button-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 25px;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  margin: 30px auto;
+  gap: 50px;
+  justify-items: center;
+  margin: 40px auto;
+  max-width: 75%;
 }
 
 button {
-  background-color: #004aad;
-  color: white;
-  border: none;
-  padding: 15px;
-  border-radius: 20px;
+  width: 240px;
+  height: 65px;
   font-size: 18px;
-  font-weight: 600;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 14px;
+  color: WHITE;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-}
-button:hover {
-  background-color: #0074e4;
-  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.35s ease;
+  background-size: 200% auto;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
 }
 
+button:hover {
+  transform: scale(1.07);
+  background-position: right center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+/* ===== BUTTON GRADIENT THEMES ===== */
+.btn1 { background-image: linear-gradient(to right, #89f7fe, #66a6ff); }
+.btn2 { background-image: linear-gradient(to right, #f6d365, #fda085); }
+.btn3 { background-image: linear-gradient(to right, #a1c4fd, #c2e9fb); }
+.btn4 { background-image: linear-gradient(to right, #fbc2eb, #a6c1ee); }
+.btn5 { background-image: linear-gradient(to right, #fddb92, #d1fdff); }
+.btn6 { background-image: linear-gradient(to right, #84fab0, #8fd3f4); }
+
+/* ===== SUB BUTTONS ===== */
 .sub-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
+  display: none;
+  margin-top: 10px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
 }
 
 .sub-buttons button {
-  background-color: #006400;
+  width: 190px;
+  height: 45px;
   font-size: 16px;
-  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #e0f7fa, #e1f5fe);
+  color: #003366;
+  font-weight: bold;
+  transition: all 0.3s;
 }
 
 .sub-buttons button:hover {
-  background-color: #00994d;
+  transform: scale(1.06);
+  box-shadow: 0 0 15px #b3e5fc;
 }
 
-/* SCROLLING TEXT */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== SCROLLING TEXT ===== */
 .scroll-text {
-  font-size: 22px;
+  margin-top: 60px;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 25px;
   font-weight: bold;
-  color: darkred;
-  margin: 20px 0;
-  animation: scrollText 12s linear infinite;
-}
-@keyframes scrollText {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-100%); }
+  color: #FFD700;
+  text-shadow: 3px 3px 6px #002366, 0 0 20px #fff;
+  border-top: 2px solid rgba(255,255,255,0.4);
+  border-bottom: 2px solid rgba(255,255,255,0.4);
+  padding: 15px 0;
+  background: rgba(0, 35, 102, 0.2);
 }
 
-/* FOOTERS */
+.scroll-text span {
+  color: #fff;
+  text-shadow: 2px 2px 4px #000, 0 0 10px #FFD700;
+  font-style: italic;
+}
+
+/* ===== FOOTER ===== */
 footer {
-  background-color: #003366;
-  color: white;
+  text-align: center;
   padding: 15px;
+  background: rgba(0, 35, 102, 0.6);
+  color: white;
+  font-family: 'Playfair Display', serif;
   font-size: 18px;
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
-.footer-left {
-  position: absolute;
-  bottom: 10px;
-  left: 15px;
-  color: white;
-  font-size: 16px;
-}
-.footer-left a {
-  color: gold;
+
+footer a {
+  color: #FFD700;
   text-decoration: none;
+  font-weight: bold;
 }
-.footer-left a:hover {
+
+footer a:hover {
+  color: #fff;
   text-decoration: underline;
 }
 
-/* WATERMARK */
+.footer-left {
+  position: fixed;
+  bottom: 40px;
+  left: 15px;
+  font-size: 18px;
+  color: #0066cc;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+}
+
+.footer-left a {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+.footer-left a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ===== WATERMARK ===== */
 .watermark {
   position: fixed;
   bottom: 10px;
   right: 20px;
-  font-size: 55px;
-  color: rgba(0,0,0,0.07);
+  opacity: 0.1;
+  font-size: 80px;
   font-weight: bold;
-  z-index: -1;
+  color: #0d47a1;
+  user-select: none;
+  pointer-events: none;
 }
 
-/* ====== RESPONSIVE DESIGN ====== */
-
-/* For tablets */
+/* ===== RESPONSIVE FIXES ===== */
 @media (max-width: 1024px) {
-  .heading1 { font-size: 40px; }
-  .heading2 { font-size: 50px; }
-  .heading3 { font-size: 26px; }
-
   .button-container {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 30px;
     max-width: 90%;
-  }
-
-  button {
-    font-size: 16px;
-    padding: 12px;
-  }
-
-  .logo, .passport {
-    width: 100px;
-    height: 100px;
   }
 }
 
-/* For mobile phones */
-@media (max-width: 600px) {
-  body { padding: 0 10px; }
+@media (max-width: 700px) {
+  .heading1 { font-size: 32px; }
+  .heading2 { font-size: 42px; }
+  .heading3 { font-size: 24px; }
 
-  .heading1 { font-size: 28px; }
-  .heading2 { font-size: 36px; }
-  .heading3 { font-size: 20px; }
-
-  .top-container {
-    flex-direction: column;
-    align-items: center;
+  .logo, .passport-container {
+    position: static;
+    margin: 10px auto;
   }
 
-  .logo, .passport {
-    width: 90px;
-    height: 90px;
+  .passport, .logo {
+    width: 100px;
+    height: 110px;
   }
+
+  .caption { font-size: 14px; }
 
   .button-container {
     grid-template-columns: 1fr;
     gap: 15px;
-    width: 100%;
+    max-width: 95%;
   }
 
   button {
-    width: 100%;
+    width: 90%;
     height: 55px;
     font-size: 16px;
   }
 
   .sub-buttons button {
-    width: 100%;
+    width: 85%;
+    font-size: 14px;
   }
 
-  .scroll-text {
-    font-size: 18px;
-    animation-duration: 10s;
-  }
+  .scroll-text { font-size: 18px; padding: 10px 0; }
 
-  footer {
-    font-size: 15px;
-  }
-
-  .footer-left {
+  footer, .footer-left {
     position: static;
-    margin-top: 10px;
+    font-size: 16px;
+    padding: 10px;
   }
 
-  .watermark {
-    font-size: 35px;
-    right: 10px;
-    bottom: 10px;
-  }
+  .watermark { font-size: 40px; bottom: 5px; right: 10px; }
 }
 </style>
 </head>
 
 <body>
-
-<div class="top-container">
-  <img src="your-logo.png" alt="Logo" class="logo">
-  <div>
-    <div class="heading1">SOUTH CENTRAL RAILWAY</div>
-    <div class="heading2">GUNTUR DIVISION</div>
-    <div class="heading3">Operating Department - Planning Section</div>
-  </div>
-  <img src="your-photo.jpg" alt="Passport Photo" class="passport">
+<img src="L2.jpeg" alt="Logo" class="logo">
+<div class="passport-container">
+  <img src="R1.jpeg" alt="Passport Photo" class="passport">
+  <div class="caption">J.SRINATH, IRTS</div>
+  <div class="caption">Sr.DOM/GNT</div>
 </div>
 
-<div class="scroll-text">Welcome to the Planning Section - Operating Department</div>
+<div class="heading1">OPERATING DEPARTMENT</div>
+<div class="heading2">FRIGHT OPERATIONS</div>
+<div class="heading3">GUNTUR DIVISION</div>
 
+<!-- Main Button Grid -->
 <div class="button-container">
-  <button>Control Orders</button>
-  <button>Rake Planning</button>
-  <button>Yard Position</button>
-  <button>Interchange</button>
-  <button>Analysis</button>
-</div>
-
-<div class="sub-buttons">
-  <button>TI Profiles</button>
-  <button>Planning Team</button>
-  <button>Important Links</button>
+  <!-- your existing buttons remain exactly same -->
+  <!-- (not shown here for brevity, paste your buttons as is) -->
 </div>
 
 <footer>
-  Designed for <strong>Planning Section</strong> | Powered by <strong>Operating Department, GNT Division</strong>
-  <div class="footer-left">
-    <a href="#">Contact</a>
-  </div>
+  <p>Designed for <strong>FRIGHT OPERATIONS</strong> | Powered by
+    <a href="file:///C:/Users/HP/Desktop/Gunturoperating/MAIN_SHEET/MAINindex.html">
+      Operating Department, GNT Division
+    </a>
+  </p>
 </footer>
 
-<div class="watermark">Operating</div>
+<div class="scroll-text">
+  <marquee behavior="scroll" direction="LEFT" scrollamount="12">
+    🌟✨ Welcome to the <span>Operating Department </span> FRIGHT CELL
+    <span> of Guntur Division, South Central Railway</span> 🚂💼
+  </marquee>
+</div>
 
+<div class="footer-left">
+  <a href="file:///C:/Users/HP/Desktop/Gunturoperating/CONTACT/contact.html">CONTACT-TI</a>
+</div>
+
+<div class="watermark">FOIS-HUB</div>
+
+<script>
+function openFolder(url) { window.open(url, "_blank"); }
+
+function toggleSubButtons(id) {
+  document.querySelectorAll('.sub-buttons').forEach(sub => {
+    if (sub.id !== id) sub.style.display = 'none';
+  });
+  const el = document.getElementById(id);
+  el.style.display = (el.style.display === "block") ? "none" : "block";
+}
+
+function openSub(url, id) {
+  const submenu = document.getElementById(id);
+  if (submenu) submenu.style.display = 'none';
+  setTimeout(() => { window.open(url, '_blank'); }, 100);
+}
+
+document.addEventListener('click', function(event) {
+  const isInsideSubmenu = event.target.closest('.sub-buttons');
+  const isMainButton = event.target.closest('button');
+  if (!isInsideSubmenu && !isMainButton) {
+    document.querySelectorAll('.sub-buttons').forEach(sub => sub.style.display = 'none');
+  }
+});
+</script>
 </body>
 </html>
